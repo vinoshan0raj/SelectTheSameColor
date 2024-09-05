@@ -8,8 +8,10 @@ public class GamerTimer : MonoBehaviour
 {
     public float startTime = 20f;
     [SerializeField] TextMeshProUGUI timerText;
-    private float timeElapsed;
+    public float timeElapsed;
     private bool isTimerRunning = true;
+
+    int seconds;
 
     void Start()
     {
@@ -33,5 +35,9 @@ public class GamerTimer : MonoBehaviour
 
             timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         }
+    }
+    public void TimeMinus()
+    {
+        timeElapsed -= 10;
     }
 }

@@ -6,6 +6,7 @@ public class SpawnerScript : MonoBehaviour
 {
     public GameObject[] prefabs;
     public int maxSpawnCount = 20; 
+    GameManager gameManager;
 
     void Start()
     {
@@ -24,10 +25,8 @@ public class SpawnerScript : MonoBehaviour
         Instantiate(prefabToSpawn, transform.position, Quaternion.identity);
         if (randomIndex == 0) 
         {
-            prefabToSpawn.tag = "Red";
-        }
-
-        
+            prefabToSpawn.tag = gameManager.randomTag;
+        }        
         prefabToSpawn.AddComponent<GameManager>();
     }
 }
